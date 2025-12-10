@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nitestarlight - Creating Magical Musical Moments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #000;
+            color: #FFD700;
+            overflow-x: hidden;
+        }
+
+        /* Starfield Background */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #FFF;
+            border-radius: 50%;
+            animation: twinkle ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        /* Main Content */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Home Section */
+        #home {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 8rem;
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(45deg, #FFD700, #FDB931, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            animation: glow 2s ease-in-out infinite;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .tagline {
+            font-size: 2rem;
+            color: #FDB931;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #000;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Content Box */
+        .content-box {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            font-family: 'Brush Script MT', cursive;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #F5DEB3;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Videos Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .video-placeholder {
+            <iframe width="100%" height="200" 
+            src="https://www.youtube.com/embed/LUvynNHqkgY?si=P7zNqilCh0ruaLU3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        }
+
+        .video-placeholder svg {
+           <iframe width="100%" height="200" 
+            src=<iframe width="560" height="315" src="https://www.youtube.com/embed/d6gi-JbF-Go?si=pW1gt5DRKCElfOMv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        }
+
+        /* Booking Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #FFD700;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: #F5DEB3;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #FFD700;
+        }
+
+        .contact-item a {
+            color: #F5DEB3;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #FFD700;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 4rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .content-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield -->
+    <div class="starfield" id="starfield"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#book">Book Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h1 class="logo">2nitestarlight</h1>
+            <p class="tagline">Creating Magical Musical Moments Under The Stars</p>
+            <a href="#book" class="cta-button">Book Us Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="content-box">
+                <h2>About Us</h2>
+                <p>Welcome to 2nitestarlight, where music meets magic under the celestial canvas. We are a passionate band dedicated to creating unforgettable musical experiences that light up your special occasions.</p>
+                <p>With years of experience performing at weddings, corporate events, festivals, and private parties, we bring energy, professionalism, and a diverse repertoire that spans multiple genres.</p>
+                <p>Our mission is to make every performance shine as bright as the stars above, creating memories that last a lifetime. From intimate acoustic sessions to high-energy performances, we adapt to your vision and make your event truly special.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <div class="container">
+            <h2>Performance Videos</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 0.5rem;">Live Performance 1</h3>
+                    <p style="font-size: 1rem;">Experience our energy and passion on stage</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 0.5rem;">Wedding Performance</h3>
+                    <p style="font-size: 1rem;">Making your special day unforgettable</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 0.5rem;">Corporate Event</h3>
+                    <p style="font-size: 1rem;">Professional entertainment for your business</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 0.5rem;">Festival Highlight</h3>
+                    <p style="font-size: 1rem;">Crowd favorites and hit performances</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: rgba(245, 222, 179, 0.7);">
+                Embed your YouTube or Vimeo videos by replacing the placeholders above
+            </p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="book">
+        <div class="container">
+            <div class="content-box">
+                <h2>Book 2nitestarlight</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Fill out the form below and we'll get back to you within 24 hours!</p>
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Event Date *</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type *</label>
+                    <select id="eventType" required>
+                        <option value="">Select an option</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="private">Private Party</option>
+                        <option value="festival">Festival</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" placeholder="Tell us about your event, venue, expected guests, and any special requests..."></textarea>
+                </div>
+
+                <button type="submit" onclick="submitBooking()">Submit Booking Request</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.48.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.56 3.48 1 1 0 01-.21 1.11z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 1rem;">Phone</h3>
+                    <a href="tel:6478814261">647-881-4261</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.7l-8 5.334L4 8.7V6.3l8 5.334L20 6.3z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 1rem;">Email</h3>
+                    <a href="mailto:2nitestarlight@gmail.com">2nitestarlight@gmail.com</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 3rem;">
+                We typically respond within 24 hours. We look forward to making your event magical!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-family: 'Brush Script MT', cursive; font-size: 1.5rem; margin-bottom: 0.5rem;">2nitestarlight</p>
+        <p style="color: rgba(245, 222, 179, 0.7);">© 2024 2nitestarlight. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create starfield
+        const starfield = document.getElementById('starfield');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            star.style.animationDelay = (Math.random() * 5) + 's';
+            starfield.appendChild(star);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Booking form submission
+        function submitBooking() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const eventType = document.getElementById('eventType').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !phone || !date || !eventType) {
+                alert('Please fill in all required fields!');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Booking Request from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Event Date: ${date}
+Event Type: ${eventType}
+
+Additional Details:
+${message}`);
+
+            window.location.href = `mailto:2nitestarlight@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Highlight active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.style.background = 'rgba(255, 215, 0, 0.2)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
